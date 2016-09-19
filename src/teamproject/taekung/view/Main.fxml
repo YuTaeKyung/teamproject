@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamproject.taekung.controller.MainController">
+    <top>
+        <VBox prefHeight="79.0" prefWidth="1024.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="파일" >
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="열기" />
+                                <MenuItem mnemonicParsing="false" text="저장" />
+                                <MenuItem mnemonicParsing="false" text="다른이름으로 저장" />
+                                <MenuItem mnemonicParsing="false" text="불러오기" />
+                                <MenuItem mnemonicParsing="false" onAction="#exitProgram" text="닫기" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="도구">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="회원관리" />
+                                <MenuItem mnemonicParsing="false" text="도서관리" />
+                                <MenuItem mnemonicParsing="false" text="대여현황관리" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="옵션">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="??" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="창">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="???" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="도움말">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="도움말" onAction="#showInfo" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <ToolBar prefHeight="61.0" prefWidth="1024.0">
+                    <items>
+                        <Button mnemonicParsing="false" onAction="#alertLogin" prefHeight="29.0" prefWidth="80.0" text="Home" />
+                        <Button mnemonicParsing="false" onAction="#alertLogin" text="회원관리"  />
+                        <Button mnemonicParsing="false" onAction="#alertLogin" text="도서관리" />
+                        <Button mnemonicParsing="false" onAction="#alertLogin" text="대여현황" />
+                        <Button mnemonicParsing="false" onAction="#exitProgram" text="종료" />
+                    </items>
+                    <padding>
+                        <Insets left="20.0" right="20.0" />
+                    </padding>
+                </ToolBar>
+            </children>
+        </VBox>
+    </top>
+    <bottom>
+        <HBox prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="도움말을 보려면 &lt;F1&gt;키를 누르세요">
+                    <padding>
+                        <Insets left="10.0" top="5.0" />
+                    </padding>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <AnchorPane prefHeight="610.0" prefWidth="724.0" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane layoutX="262.0" layoutY="130.0" prefHeight="400.0" prefWidth="500.0" style="-fx-border-color: white; -fx-border-width: 5; -fx-border-radius: 10;">
+                    <children>
+                        <Label layoutX="62.0" layoutY="129.0" text="아이디">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="42.0" layoutY="176.0" text="비밀번호">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="uid" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="127.0" promptText="ID" />
+                        <PasswordField fx:id="pwd" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="174.0" promptText="PassWord" />
+                        <Button layoutX="329.0" layoutY="127.0" mnemonicParsing="false" onAction="#loginProgram" prefHeight="81.0" prefWidth="130.0" style="-fx-background-color: orange; -fx-border-color: orange;" text="로그인" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Button>
+                        <CheckBox layoutX="116.0" layoutY="233.0" mnemonicParsing="false" text="아이디 저장" />
+                        <CheckBox layoutX="250.0" layoutY="233.0" mnemonicParsing="false" text="보안접속" />
+                        <Button layoutX="122.0" layoutY="280.0" mnemonicParsing="false" onAction="#joinProgram" prefHeight="50.0" prefWidth="92.0" style="-fx-background-color: skyblue;" text="회원가입" />
+                        <Button layoutX="244.0" layoutY="280.0" mnemonicParsing="false" onAction="#findInfo" prefHeight="50.0" prefWidth="148.0" style="-fx-background-color: pink;" text="아이디/비번찾기" />
+                        <Label alignment="CENTER" layoutX="44.0" layoutY="14.0" prefHeight="95.0" prefWidth="413.0" text=":: @도서대여프로그램@::">
+                            <font>
+                                <Font size="27.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

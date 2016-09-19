@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:controller="teamproject.taekung.controller.showBookDataController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="100.0" layoutY="56.0" text="북코드" />
+      <Label layoutX="100.0" layoutY="99.0" text="도서명" />
+      <Label layoutX="100.0" layoutY="153.0" text="장르" />
+      <Label layoutX="100.0" layoutY="200.0" text="저자" />
+      <Label layoutX="100.0" layoutY="260.0" text="출판사" />
+      <Label fx:id="bno" layoutX="174.0" layoutY="56.0" text="Label" />
+      <Label fx:id="bname" layoutX="174.0" layoutY="99.0" text="Label" />
+      <Label fx:id="genre" layoutX="174.0" layoutY="153.0" text="Label" />
+      <Label fx:id="author" layoutX="174.0" layoutY="200.0" text="Label" />
+      <Label fx:id="publisher" layoutX="174.0" layoutY="260.0" text="Label" />
+   </children>
+</AnchorPane>

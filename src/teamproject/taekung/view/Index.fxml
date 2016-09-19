@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="main" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamproject.taekung.controller.IndexController">
+    <top>
+        <VBox prefHeight="79.0" prefWidth="1024.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="파일">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="열기" />
+                                <MenuItem mnemonicParsing="false" text="저장" />
+                                <MenuItem mnemonicParsing="false" text="다른이름으로 저장" />
+                                <MenuItem mnemonicParsing="false" text="불러오기" />
+                                <MenuItem mnemonicParsing="false" onAction="#exit" text="닫기" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="도구">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="회원관리" />
+                                <MenuItem mnemonicParsing="false" text="도서관리" />
+                                <MenuItem mnemonicParsing="false" text="대여현황관리" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="옵션">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="??" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="창">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="???" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="도움말">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="도움말" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <ToolBar prefHeight="61.0" prefWidth="1024.0">
+                    <items>
+                        <Button mnemonicParsing="false" onAction="#goHome" prefHeight="29.0" prefWidth="80.0" text="Home" />
+                        <Button mnemonicParsing="false" onAction="#goToMember" text="회원관리" />
+                        <Button mnemonicParsing="false" onAction="#goToBook" text="도서관리" />
+                        <Button mnemonicParsing="false" onAction="#goToRent" text="대여현황관리" />
+                        <Button mnemonicParsing="false" onAction="#exit" text="종료" />
+                    </items>
+                    <padding>
+                        <Insets left="20.0" right="20.0" />
+                    </padding>
+                </ToolBar>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.28438948995363217" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                        <GridPane hgap="10.0" layoutX="-1.0" layoutY="-2.0" prefHeight="177.0" prefWidth="1024.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="246.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="542.0" minWidth="10.0" prefWidth="297.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="417.0" minWidth="0.0" prefWidth="171.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="375.0" minWidth="10.0" prefWidth="272.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label alignment="CENTER" text="이메일" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER" text="생년월일" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="birthdateLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="emailLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="150.0" text="이름" GridPane.columnIndex="2">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="150.0" text="전화번호" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="150.0" text="휴대폰" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="150.0" text="주소" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="150.0" text="비고" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="nameLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="3">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="phoneLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="cellphoneLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="addrLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                    <children>
+                                        <TextField fx:id="memberText" prefHeight="29.0" prefWidth="173.0" />
+                                        <Button fx:id="memberBtn" mnemonicParsing="false" onAction="#findMember" text="검색">
+                                            <HBox.margin>
+                                                <Insets left="10.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                        <TextField fx:id="bookText" />
+                                        <Button fx:id="bookBtn" mnemonicParsing="false" onAction="#findBook" text="검색">
+                                            <HBox.margin>
+                                                <Insets left="10.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <children>
+                                        <TextField fx:id="lentText" />
+                                        <Button fx:id="lentBtn" mnemonicParsing="false" onAction="#findLent" text="검색">
+                                            <HBox.margin>
+                                                <Insets left="10.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Label alignment="CENTER" text="회원조회">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <SplitMenuButton fx:id="memberSelect" mnemonicParsing="false" text="검색조건">
+                                            <items>
+                                                <MenuItem fx:id="selectName" mnemonicParsing="false" onAction="#selectOption" text="이름" />
+                                                <MenuItem fx:id="selectPhone" mnemonicParsing="false" text="전화번호" onAction="#selectOption2" />
+                                            </items>
+                                        </SplitMenuButton>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label alignment="CENTER" text="도서 조회">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <SplitMenuButton mnemonicParsing="false" text="검색조건">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="도서명" />
+                                                <MenuItem mnemonicParsing="false" text="저자" />
+                                                <MenuItem mnemonicParsing="false" text="도서번호" />
+                                            </items>
+                                        </SplitMenuButton>
+
+                                    </children>
+                                </HBox>
+                                <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                    <children>
+                                        <Label alignment="CENTER" text="대여 현황 조회">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <SplitMenuButton mnemonicParsing="false" text="검색조건">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="도서번호" />
+                                                <MenuItem mnemonicParsing="false" text="회원번호" />
+                                                <MenuItem mnemonicParsing="false" text="대여일" />
+                                                <MenuItem mnemonicParsing="false" text="반납일" />
+                                            </items>
+                                        </SplitMenuButton>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                        <StackPane prefHeight="463.0" prefWidth="1008.0">
+                            <children>
+                                <TableView fx:id="showMember" onMouseClicked="#memberLabel" prefHeight="451.0" prefWidth="999.0">
+                                    <columns>
+                                        <TableColumn fx:id="mno" prefWidth="200.0" text="회원번호" />
+                                        <TableColumn fx:id="name" prefWidth="200.0" text="이름" />
+                                        <TableColumn fx:id="phone" prefWidth="200.0" text="전화번호" />
+                                        <TableColumn fx:id="cellphone" prefWidth="200.0" text="휴대폰" />
+                                        <TableColumn fx:id="birthdate" prefWidth="207.0" text="생년월일" />
+                              <TableColumn fx:id="email" minWidth="0.0" prefWidth="0.0" text="이메일" />
+                              <TableColumn fx:id="addr" minWidth="0.0" prefWidth="0.0" text="주소" />
+                                    </columns>
+                                </TableView>
+                                <TableView fx:id="showBook" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                    <columns>
+                                        <TableColumn prefWidth="250.0" text="ISBN" />
+                                        <TableColumn minWidth="0.0" prefWidth="250.0" text="도서명" />
+                                        <TableColumn prefWidth="250.0" text="저자" />
+                                        <TableColumn prefWidth="257.0" text="출판사" />
+                                    </columns>
+                                </TableView>
+                                <TableView fx:id="showRent" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                    <columns>
+                                        <TableColumn prefWidth="200.0" text="대여번호" />
+                                        <TableColumn prefWidth="200.0" text="ISBN" />
+                                        <TableColumn prefWidth="200.0" text="회원번호" />
+                                        <TableColumn prefWidth="200.0" text="대여일" />
+                                        <TableColumn prefWidth="207.0" text="반납일" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </StackPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </center>
+    <bottom>
+        <VBox prefHeight="40.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="도움말을 보려면 &lt;ALT + F1&gt;키를 누르세요">
+                    <padding>
+                        <Insets left="15.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+    </bottom>
+</BorderPane>
